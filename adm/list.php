@@ -1,5 +1,5 @@
 <?php
-require('includes/conexao.php');
+require('../includes/conexao.php');
 ?>
 
 <!doctype html>
@@ -13,7 +13,7 @@ require('includes/conexao.php');
   <body>
 
 <?php
-include("includes/navbar.php");
+include("../includes/navbar.php");
 ?>
 
     <div class="container mt-4">

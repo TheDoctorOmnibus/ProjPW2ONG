@@ -1,6 +1,6 @@
 <?php
-require("includes/conexao.php");
-require("includes/config.php");
+require("../includes/conexao.php");
+require("../includes/config.php");
 
 if (isset($_POST['creat_evento'])) {
     // Obter dados do formulário

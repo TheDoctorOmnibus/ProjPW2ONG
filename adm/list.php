@@ -36,7 +36,7 @@ include("../includes/navbar.php");
                     </thead>
                     <tbody>
                     <?php
-                            $sql = "SELECT * FROM eventos ORDER BY data_evento DESC";
+                            $sql = "SELECT * FROM eventos ORDER BY id";
                             $resultado = $conexao->query($sql);
 
                             if ($resultado->num_rows > 0) {
@@ -48,7 +48,7 @@ include("../includes/navbar.php");
                                     echo '<td>' . $dataFormatada . '</td>';
                                     echo '<td>' . $evento['hora_inicio'] . ' às ' . $evento['hora_termino'] . '</td>';
                                     echo '<td>';
-                                    echo '<a href="../evento.php?id=' . $evento['id'] . '" class="btn btn-secondary btn-sm" title="Visualizar">Visualizar</a>';
+                                    echo '<a href="../adm/evento.php?id=' . $evento['id'] . '" class="btn btn-secondary btn-sm" title="Visualizar">Visualizar</a>';
                                     echo '<a href="editar-evento.php?id=' . $evento['id'] . '" class="btn btn-success btn-sm" title="Editar">Editar</a>';
                                     echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
                                     echo '</td>';

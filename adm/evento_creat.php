@@ -16,7 +16,7 @@ include("../includes/navbar.php");
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.php" class="link-secondary link-underline-opacity-0" >Administração</a></li>
+                <li class="breadcrumb-item"><a href="list.php" class="link-secondary link-underline-opacity-0" >Administração</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Novo Evento</li>
             </ol>
         </nav>
@@ -105,7 +105,7 @@ include("../includes/navbar.php");
                     </div>
                     
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-                        <a href="index.php" class="btn btn-danger me-md-2">Voltar</a>
+                        <a href="list.php" class="btn btn-danger me-md-2">Voltar</a>
                         <button type="submit" name="creat_evento" class="btn btn-primary">Salvar Evento</button>
                     </div>
                 </form>

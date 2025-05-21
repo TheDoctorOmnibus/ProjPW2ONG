@@ -57,6 +57,6 @@ if (!empty($logradouro) && !empty($bairro) && !empty($cidade) && !empty($estado)
     mysqli_query($conexao, $sql);
 }
 
-header('Location: index.php');
+header('Location: list.php');
 
 ?>

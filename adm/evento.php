@@ -33,6 +33,7 @@
 <body>
 
 <?php
+require("../includes/conexao.php");
 include("navbaradm.php");
 ?>
   <div class="m-5">
@@ -40,35 +41,65 @@ include("navbaradm.php");
     <a href="#" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
 
     <!-- Conteúdo principal -->
-    <div class="d-flex ">
       <!-- Imagem -->
-      <div class="esquerda">
+          <?php
+            if (isset($_GET['id'])) {
+              $usuario_id = mysqli_real_escape_string($conexao, $_GET['id']);
+              $query = "SELECT * FROM EVENTOS WHERE id='$usuario_id'";
+              $consulta_evento = mysqli_query($conexao, $query);
+              
+              if (mysqli_num_rows($consulta_evento) > 0) {
+                while ($linha = mysqli_fetch_array($consulta_evento)) {
+                  $endereco_id = $linha['endereco_id'];
+                  $queryen = "SELECT * FROM ENDERECOS WHERE id='$endereco_id'";
+                  $consulta_endereco = mysqli_query($conexao, $queryen);
+                  if (mysqli_num_rows($consulta_endereco) > 0){
+                    while ($endereco = mysqli_fetch_array($consulta_endereco)){
+                      $dataFormatada = date('d/m/Y', strtotime($linha['data_evento']));
+                      echo '<div class="d-flex ">';
 
-        <div class="col-md-10">
-          <img src="../img/teste.png" alt="Mulher com cachorro" class="img-fluid rounded">
-        </div>
 
-        <!-- Criador -->
-        <div class="criador">
-          <p class="fw-bold mb-1">José criou esse evento</p>
-          <p class="mb-1">Evento criado 20 de abril 2024 às 16:00</p>
-          <p>Editado por último 29 de abril 2024 às 20:00</p>
-        </div>
+                      echo '<div class="esquerda">';
 
-      </div>
+                      echo '<div class="col-md-10">';
+                      echo '<img src="../uploads/' . $linha['imagem_capa'] . '" class="img-fluid rounded">';
+                      echo '</div>';
 
-      <!-- Informações do evento -->
-      <div class="direita">
-        <div class="col-md-7">
-          <h1 class="fw-bold">Feira de Adoção<br>de Animais</h1>
-          <p class="fs-5">Participe da nossa feira de adoção de animais e ajude a encontrar um lar para cães e gatos resgatados.</p>
-        </div>
+                      echo '<div style="display: inline-block;" class="criador">';
+                      echo '<p class="mb-1"> Data da criação ' . $linha['data_criacao'] . '</p>';
+                      echo '<p > Data da última atualização ' . $linha['data_atualizacao'] . '</p>';
+                      echo '</div>';
 
-        <div class="event-info mb-3">
-          <p><i class="bi bi-calendar-event"></i>10 de maio de 2024</p>
-          <p><i class="bi bi-geo-alt"></i>Rua das Flores, 123, Centro, Cidade, 12345-678</p>
-          <p><i class="bi bi-clock"></i>10:00 – 14:00</p>
-        </div>
+                      echo '</div>';
+
+
+                      echo '<div class="direita">';
+
+                      echo '<div class="col-md-7">';
+                      echo '<h1 class="fw-bold">' . $linha['nome'] . '</h1>';
+                      echo '<p class="fs-5">' . $linha['descricao'] . '</p>';
+                      echo '</div>';
+
+                      echo '<div class="event-info mb-3">';
+                      echo '<p><i class="bi bi-calendar-event"></i>' . $dataFormatada . '</p>';
+                      echo '<p><i class="bi bi-geo-alt"></i>' . $endereco['logradouro'] . '</p>';
+                      echo '<p><i class="bi bi-clock"></i>' . $linha['hora_inicio'] . '-' . $linha['hora_termino'] . '</p>';
+                      echo '</div>';
+
+                      echo '</div>';
+                      echo '</div>';
+                    }
+                  } else {
+                    echo '<h5>endereço não encontrado</h5>';
+                  }
+                }
+              } else {
+                echo "<h5>Usuário não encontrado</h5>";
+              }
+            } else {
+              echo "<h5>Informação não encontrada</h5>";
+            }
+          ?>
 
           <!-- Botões -->
         <div class="d-flex gap-2 mt-3">

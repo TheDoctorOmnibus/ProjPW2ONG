@@ -10,15 +10,15 @@
 <body>
 
 <?php
-include("../includes/navbar.php");
+include("navbaradm.php");
 ?>
-
     <div class="container mt-4">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="list.php" class="link-secondary link-underline-opacity-0" >Administração</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Novo Evento</li>
             </ol>
+            <a href="list.php" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
         </nav>
 
         <h1 class="mb-4">Novo Evento</h1>

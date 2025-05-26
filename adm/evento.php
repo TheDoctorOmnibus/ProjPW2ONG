@@ -38,7 +38,7 @@ include("navbaradm.php");
 ?>
   <div class="m-5">
     <!-- Botão Voltar -->
-    <a href="#" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
+    <a href="list.php" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
 
     <!-- Conteúdo principal -->
       <!-- Imagem -->

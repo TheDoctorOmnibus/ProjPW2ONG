@@ -24,12 +24,11 @@ require('../includes/conexao.php');
   <body>
 
 <?php
-include("../includes/navbaradm.php");
+include("../includes/navbarclie.php");
 ?>
 
     <div class="container mt-5">
         <h2 class="mb-4 text-center fw-bold">Eventos da ONG
-            <a href="evento_creat.php" class="btn btn-primary float-end">Adcionar Evento</a>
         </h2>
             <table class="table table-hover align-middle">
                     <tbody>
@@ -51,10 +50,10 @@ include("../includes/navbaradm.php");
                                             echo '<td> <small>' . $dataFormatada . ' • ' . $endereco['logradouro'] . ' ' . $endereco['numero'] . '</small> </td>';
                                             echo '<td> <small>' . $evento['hora_inicio'] . ' - ' . $evento['hora_termino'] . '</small> </td>';
                                             echo '<td>';
-                                            echo '<a href="../adm/evento.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
+                                            echo '<a href="../clie/eventoclie.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
 
                                             //echo '<a href="editar-evento.php?id=' . $evento['id'] . '" class="btn btn-success btn-sm" title="Editar">Editar</a>';
-                                            //echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
+                                           // echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
                                             echo '</td>';
                                             echo '</tr>';
 

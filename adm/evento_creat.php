@@ -10,7 +10,7 @@
 <body>
 
 <?php
-include("navbaradm.php");
+include("../includes/navbaradm.php");
 ?>
     <div class="container mt-4">
         <nav aria-label="breadcrumb">

@@ -34,11 +34,11 @@
 
 <?php
 require("../includes/conexao.php");
-include("../includes/navbaradm.php");
+include("../includes/navbarclie.php");
 ?>
   <div class="m-5">
     <!-- Botão Voltar -->
-    <a href="list.php" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
+    <a href="index.php" class="btn btn-voltar mb-3" style="background-color: #3B82F6; color: white; font-weight:bold;">Voltar</a>
 
     <!-- Conteúdo principal -->
       <!-- Imagem -->
@@ -65,11 +65,6 @@ include("../includes/navbaradm.php");
                       echo '<img src="../uploads/' . $linha['imagem_capa'] . '" class="img-fluid rounded">';
                       echo '</div>';
 
-                      echo '<div style="display: inline-block;" class="criador">';
-                      echo '<p class="mb-1"> Data da criação ' . $linha['data_criacao'] . '</p>';
-                      echo '<p > Data da última atualização ' . $linha['data_atualizacao'] . '</p>';
-                      echo '</div>';
-
                       echo '</div>';
 
 
@@ -85,8 +80,6 @@ include("../includes/navbaradm.php");
                       echo '<p><i class="bi bi-geo-alt"></i>' . $endereco['logradouro'] . '</p>';
                       echo '<p><i class="bi bi-clock"></i>' . $linha['hora_inicio'] . '-' . $linha['hora_termino'] . '</p>';
                       echo '<div class="d-flex gap-2 mt-3">';
-                      echo '<button class="btn btn-outline-danger">Excluir</button>';
-                      echo '<button class="btn btn-outline-success">Editar</button>';
                       echo '</div>';
 
 

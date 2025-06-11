@@ -29,7 +29,7 @@ if (mysqli_num_rows($resultado) === 1) {
     $_SESSION['usuario'] = $user['usuario'];
 
     session_start();
-	$_SESSION['login']=true;
+	$_SESSION['login']==true;
 
     // Redireciona de acordo com o tipo
     if ($user['tipo'] == 'adm') {

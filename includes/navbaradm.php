@@ -22,6 +22,9 @@
     <?php 
     echo "Bem-vindo, administrador " . $_SESSION['usuario'];
     ?>
+
+    <a href="../includes/logout.php">Logout</a>
+
   </nav>
 </body>
 </html>

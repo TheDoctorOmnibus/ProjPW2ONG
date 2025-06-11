@@ -2,6 +2,11 @@
 session_start();
 
 require('../includes/conexao.php');
+
+if ( !isset($_SESSION['usuario'])){
+  header("Location: ../clie/index.php");
+}
+
 ?>
 
 <!doctype html>

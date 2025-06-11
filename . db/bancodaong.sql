@@ -1,6 +1,14 @@
 CREATE DATABASE banco_ong;
 use banco_ong;
 
+-- Criação da tabela do usuario
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
+    tipo ENUM('adm', 'clie') NOT NULL
+);
+
 -- Criação da tabela de endereços
 CREATE TABLE enderecos (
     id INT AUTO_INCREMENT PRIMARY KEY,

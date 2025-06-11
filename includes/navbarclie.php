@@ -49,14 +49,14 @@
       </button>
 
       <h2 class="text-5xl font-bold text-gray-900 mb-6 text-center">Iniciar Sessão</h2>
-      <form class="space-y-4">
+      <form class="space-y-4" method="POST" action="../includes/login.php">
         <div>
-          <label class="block text-sm font-medium text-gray-700">E-mail</label>
-          <input type="email" class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300" required />
+          <label class="block text-sm font-medium text-gray-700">usuário</label>
+          <input type="text" name="usuario" class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300" required />
         </div>
         <div>
           <label class="block text-sm font-medium text-gray-700">Senha</label>
-          <input type="password" class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300" required />
+          <input type="password" name="senha" class="w-full border rounded px-3 py-2 mt-1 focus:outline-none focus:ring focus:ring-blue-300" required />
         </div>
         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
           Entrar

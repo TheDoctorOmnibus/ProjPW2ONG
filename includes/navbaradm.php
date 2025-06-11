@@ -19,16 +19,9 @@
     </div>
     
     <!-- Login e botão Doar -->
-    <div class="flex items-center space-x-4">
-      <div class="flex items-center space-x-1 text-black">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M5.121 17.804A11.954 11.954 0 0112 15c2.389 0 4.604.7 6.484 1.896M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-        <a href="#" class="text-sm">Login</a>
-      </div>
-    </div>
+    <?php 
+    echo "Bem-vindo, administrador " . $_SESSION['usuario'];
+    ?>
   </nav>
 </body>
 </html>

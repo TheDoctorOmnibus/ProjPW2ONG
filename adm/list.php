@@ -31,7 +31,7 @@ include("../includes/navbaradm.php");
 
     <div class="container mt-5">
         <h2 class="mb-4 text-center fw-bold">Eventos da ONG
-            <a href="evento_creat.php" class="btn btn-primary float-end">Adcionar Evento</a>
+            <a href="evento_creat.php" class="btn btn-primary float-end">Adicionar Evento</a>
         </h2>
             <table class="table table-hover align-middle">
                     <tbody>

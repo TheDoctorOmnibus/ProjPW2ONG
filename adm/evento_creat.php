@@ -37,7 +37,7 @@ include("../includes/navbaradm.php");
                             
                             <div class="mb-3">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <textarea class="form-control" id="descricao" name="descricao" rows="5"></textarea>
+                                <textarea class="form-control" id="descricao" name="descricao" rows="5" required></textarea>
                             </div>
                             
                             <div class="row">
@@ -57,7 +57,7 @@ include("../includes/navbaradm.php");
                             
                             <div class="mb-3">
                                 <label for="imagem_capa" class="form-label">Imagem de Capa</label>
-                                <input type="file" class="form-control" id="imagem_capa" name="imagem_capa">
+                                <input type="file" class="form-control" id="imagem_capa" name="imagem_capa" required>
                                 <div class="form-text">Formatos aceitos: JPG, JPEG, PNG, GIF</div>
                             </div>
                         </div>
@@ -67,38 +67,38 @@ include("../includes/navbaradm.php");
                             
                             <div class="mb-3">
                                 <label for="logradouro" class="form-label">Logradouro</label>
-                                <input type="text" class="form-control" id="logradouro" name="logradouro">
+                                <input type="text" class="form-control" id="logradouro" name="logradouro" required>
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="numero" class="form-label">Número</label>
-                                    <input type="text" class="form-control" id="numero" name="numero">
+                                    <input type="text" class="form-control" id="numero" name="numero" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="complemento" class="form-label">Complemento</label>
-                                    <input type="text" class="form-control" id="complemento" name="complemento">
+                                    <input type="text" class="form-control" id="complemento" name="complemento" required>
                                 </div>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="bairro" class="form-label">Bairro</label>
-                                <input type="text" class="form-control" id="bairro" name="bairro">
+                                <input type="text" class="form-control" id="bairro" name="bairro" required>
                             </div>
                             
                             <div class="mb-3">
                                 <label for="cidade" class="form-label">Cidade</label>
-                                <input type="text" class="form-control" id="cidade" name="cidade">
+                                <input type="text" class="form-control" id="cidade" name="cidade" required>
                             </div>
                             
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="estado" class="form-label">Estado</label>
-                                    <input type="text" class="form-control" id="estado" name="estado">
+                                    <input type="text" class="form-control" id="estado" name="estado" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="cep" class="form-label">CEP</label>
-                                    <input type="text" class="form-control" id="cep" name="cep">
+                                    <input type="text" class="form-control" id="cep" name="cep" required>
                                 </div>
                             </div>
                         </div>

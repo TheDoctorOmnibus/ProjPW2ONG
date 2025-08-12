@@ -35,21 +35,21 @@ include("../includes/navbarclie.php");
             <table class="table table-hover align-middle">
                     <tbody>
                     <?php
-                            $sql = "SELECT * FROM eventos ORDER BY id";
-                            $sqlen = "SELECT * FROM enderecos";
-                            $resultado = $conexao->query($sql);
-                            $resultadoen = $conexao->query($sqlen);
+                            $sql = "SELECT eventos.*, enderecos.logradouro, enderecos.numero 
+        FROM eventos
+        LEFT JOIN enderecos ON eventos.endereco_id = enderecos.id
+        ORDER BY eventos.id";
 
-                            if ($resultadoen->num_rows > 0){
-                                while ($endereco = $resultadoen->fetch_assoc()){
-                                    if ($resultado->num_rows > 0) {
-                                        while ($evento = $resultado->fetch_assoc()) {
+                      $resultado = $conexao->query($sql);
+
+                        if ($resultado->num_rows > 0) {
+                          while ($evento = $resultado->fetch_assoc()) {
                                             $dataFormatada = date('d/m/Y', strtotime($evento['data_evento']));
                                             echo '<tr>';
                                             echo '<td> <small>' . $evento['id'] . '</small> </td>';
                                             echo '<td> <img src="../uploads/' . $evento['imagem_capa'] . '" class="event-img"></td>';
                                             echo '<td> <strong>' . $evento['nome'] . '</strong> </td>';
-                                            echo '<td> <small>' . $dataFormatada . ' • ' . $endereco['logradouro'] . ' ' . $endereco['numero'] . '</small> </td>';
+                                            echo '<td> <small>' . $dataFormatada . ' • ' . $evento['logradouro'] . ' ' . $evento['numero'] . '</small> </td>';
                                             echo '<td> <small>' . $evento['hora_inicio'] . ' - ' . $evento['hora_termino'] . '</small> </td>';
                                             echo '<td>';
                                             echo '<a href="../clie/eventoclie.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
@@ -78,8 +78,8 @@ include("../includes/navbarclie.php");
                                             echo '</div>';
                                             echo '</div>';
                                         }
-                                    }}
-                                    } else {
+                                    }
+                                     else {
                                 echo '<tr><td colspan="5" class="text-center">Nenhum evento encontrado.</td></tr>';
                             }
                     ?>

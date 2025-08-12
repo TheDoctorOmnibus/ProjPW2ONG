@@ -10,6 +10,7 @@
 <body>
 
 <?php
+session_start();
 include("../includes/navbaradm.php");
 ?>
     <div class="container mt-4">

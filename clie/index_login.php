@@ -3,17 +3,10 @@ session_start();
 
 require('../includes/conexao.php');
 
-// Se não estiver logado, manda para a página do cliente
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../clie/index.php");
     exit;
-}
-
-// Se estiver logado mas for cliente, também bloqueia
-if ($_SESSION['tipo'] === 'clie') {
-    header("Location: ../clie/index.php");
-    exit;
-}
+}s
 ?>
 
 <!doctype html>
@@ -38,17 +31,16 @@ if ($_SESSION['tipo'] === 'clie') {
   <body>
 
 <?php
-include("../includes/navbaradm.php");
+include("../includes/navbarclielogin.php");
 ?>
 
     <div class="container mt-5">
         <h2 class="mb-4 text-center fw-bold">Eventos da ONG
-            <a href="evento_creat.php" class="btn btn-primary float-end">Adicionar Evento</a>
         </h2>
             <table class="table table-hover align-middle">
                     <tbody>
                     <?php
-                      $sql = "SELECT eventos.*, enderecos.logradouro, enderecos.numero 
+                            $sql = "SELECT eventos.*, enderecos.logradouro, enderecos.numero 
         FROM eventos
         LEFT JOIN enderecos ON eventos.endereco_id = enderecos.id
         ORDER BY eventos.id";
@@ -65,10 +57,10 @@ include("../includes/navbaradm.php");
                                             echo '<td> <small>' . $dataFormatada . ' • ' . $evento['logradouro'] . ' ' . $evento['numero'] . '</small> </td>';
                                             echo '<td> <small>' . $evento['hora_inicio'] . ' - ' . $evento['hora_termino'] . '</small> </td>';
                                             echo '<td>';
-                                            echo '<a href="../adm/evento.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
+                                            echo '<a href="../clie/eventoclie.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
 
                                             //echo '<a href="editar-evento.php?id=' . $evento['id'] . '" class="btn btn-success btn-sm" title="Editar">Editar</a>';
-                                            //echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
+                                           // echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
                                             echo '</td>';
                                             echo '</tr>';
 

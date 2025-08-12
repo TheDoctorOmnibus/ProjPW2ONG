@@ -35,7 +35,7 @@ if (mysqli_num_rows($resultado) === 1) {
     if ($user['tipo'] == 'adm') {
         header("Location: ../adm/list.php");
     } else {
-        header("Location: ../clie/index.php");
+        header("Location: ../clie/index_login.php");
     }
 } else {
     echo "Usuário ou senha incorretos.";

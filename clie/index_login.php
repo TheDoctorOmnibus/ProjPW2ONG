@@ -6,7 +6,7 @@ require('../includes/conexao.php');
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../clie/index.php");
     exit;
-}s
+}
 ?>
 
 <!doctype html>

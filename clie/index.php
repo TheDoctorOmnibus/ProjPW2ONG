@@ -1,5 +1,7 @@
 <?php
 session_start();
+ini_set('display_errors', 0);
+error_reporting(0);
 
 require('../includes/conexao.php');
 ?>
@@ -27,6 +29,10 @@ require('../includes/conexao.php');
 
 <?php
 include("../includes/navbarclie.php");
+
+if ($_SESSION['tipo'] == 'clie') {
+    header("Location: ../clie/index_login.php");
+    exit;}
 ?>
 
     <div class="container mt-5">

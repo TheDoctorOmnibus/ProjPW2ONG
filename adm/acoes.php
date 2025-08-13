@@ -2,6 +2,18 @@
 require("../includes/conexao.php");
 require("../includes/config.php");
 
+// Se não estiver logado, manda para a página do cliente
+if (!isset($_SESSION['usuario'])) {
+    header("Location: ../clie/index.php");
+    exit;
+}
+
+// Se estiver logado mas for cliente, também bloqueia
+if ($_SESSION['tipo'] === 'clie') {
+    header("Location: ../clie/index_login.php");
+    exit;
+}
+
 if (isset($_POST['creat_evento'])) {
     // Obter dados do formulário
     $nome = sanitizar($_POST['nome']);

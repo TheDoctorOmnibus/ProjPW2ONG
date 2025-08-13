@@ -11,7 +11,7 @@ if (!isset($_SESSION['usuario'])) {
 
 // Se estiver logado mas for cliente, também bloqueia
 if ($_SESSION['tipo'] === 'clie') {
-    header("Location: ../clie/index.php");
+    header("Location: ../clie/index_login.php");
     exit;
 }
 ?>

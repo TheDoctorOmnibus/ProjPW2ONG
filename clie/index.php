@@ -30,6 +30,8 @@ require('../includes/conexao.php');
 <?php
 include("../includes/navbarclie.php");
 
+echo $_SESSION['usuario'], $_SESSION['tipo'];
+
 if ($_SESSION['tipo'] == 'clie') {
     header("Location: ../clie/index_login.php");
     exit;}

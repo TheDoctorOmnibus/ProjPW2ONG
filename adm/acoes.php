@@ -2,6 +2,8 @@
 require("../includes/conexao.php");
 require("../includes/config.php");
 
+session_start();
+
 // Se não estiver logado, manda para a página do cliente
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../clie/index.php");
@@ -9,7 +11,7 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 // Se estiver logado mas for cliente, também bloqueia
-if ($_SESSION['tipo'] === 'clie') {
+if ($_SESSION['tipo'] == 'clie') {
     header("Location: ../clie/index_login.php");
     exit;
 }
@@ -69,6 +71,13 @@ if (!empty($logradouro) && !empty($bairro) && !empty($cidade) && !empty($estado)
     mysqli_query($conexao, $sql);
 }
 
-header('Location: list.php');
+if (mysqli_affected_rows($conexao) > 0){
+    header("Refresh: 5; url=list.php");
+    echo "evento adicionado com sucesso";
+}
 
+else{
+    header("Refresh: 5; url=list.php");
+    echo "evento não foi adicionado";
+}
 ?>

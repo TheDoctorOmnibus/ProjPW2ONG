@@ -59,29 +59,8 @@ include("../includes/navbarclielogin.php");
                                             echo '<td>';
                                             echo '<a href="../clie/eventoclie.php?id=' . $evento['id'] . '" class="btn btn-primary" title="Visualizar">Visualizar</a>';
 
-                                            //echo '<a href="editar-evento.php?id=' . $evento['id'] . '" class="btn btn-success btn-sm" title="Editar">Editar</a>';
-                                           // echo '<button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal' . $evento['id'] . '" title="Excluir">Excluir</button>';
                                             echo '</td>';
                                             echo '</tr>';
-
-                                            // Modal de confirmação de exclusão
-                                            echo '<div class="modal fade" id="deleteModal' . $evento['id'] . '" tabindex="-1" aria-labelledby="deleteModalLabel' . $evento['id'] . '" aria-hidden="true">';
-                                            echo '<div class="modal-dialog">';
-                                            echo '<div class="modal-content">';
-                                            echo '<div class="modal-header">';
-                                            echo '<h5 class="modal-title" id="deleteModalLabel' . $evento['id'] . '">Confirmar Exclusão</h5>';
-                                            echo '<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
-                                            echo '</div>';
-                                            echo '<div class="modal-body">';
-                                            echo 'Tem certeza que deseja excluir o evento "' . $evento['nome'] . '"? Esta ação não pode ser desfeita.';
-                                            echo '</div>';
-                                            echo '<div class="modal-footer">';
-                                            echo '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>';
-                                            echo '<a href="excluir-evento.php?id=' . $evento['id'] . '" class="btn btn-danger">Excluir</a>';
-                                            echo '</div>';
-                                            echo '</div>';
-                                            echo '</div>';
-                                            echo '</div>';
                                         }
                                     }
                                      else {
